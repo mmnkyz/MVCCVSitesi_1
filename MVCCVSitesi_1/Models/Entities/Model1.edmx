@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBMVCCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLDENEYIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASLIK" Type="varchar" MaxLength="100" />
+          <Property Name="ALTBASLIK" Type="varchar" MaxLength="100" />
+          <Property Name="TARIH" Type="varchar" MaxLength="100" />
+          <Property Name="ACIKLAMA" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLEGITIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UNIVERSITE" Type="varchar" MaxLength="100" />
+          <Property Name="FAKULTE" Type="varchar" MaxLength="100" />
+          <Property Name="BOLUM" Type="varchar" MaxLength="100" />
+          <Property Name="NOTORTALAMA" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="TBLHAKKIMDA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="50" />
+          <Property Name="SOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="ADRES" Type="varchar" MaxLength="1000" />
+          <Property Name="TELEFON" Type="varchar" MaxLength="16" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="DETAY" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLHOBI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOBILER" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TBLKURS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KURSLAR" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TBLYETENEK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YETENEKLER" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="DBMVCCVModelStoreContainer">
+          <EntitySet Name="TBLDENEYIM" EntityType="Self.TBLDENEYIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLEGITIM" EntityType="Self.TBLEGITIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLHOBI" EntityType="Self.TBLHOBI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLKURS" EntityType="Self.TBLKURS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLYETENEK" EntityType="Self.TBLYETENEK" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBMVCCVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLDENEYIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASLIK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ALTBASLIK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TARIH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLEGITIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UNIVERSITE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FAKULTE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BOLUM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOTORTALAMA" Type="Decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="TBLHAKKIMDA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADRES" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETAY" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLHOBI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOBILER" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLKURS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KURSLAR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLYETENEK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YETENEKLER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DBMVCCVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLDENEYIM" EntityType="Self.TBLDENEYIM" />
+          <EntitySet Name="TBLEGITIM" EntityType="Self.TBLEGITIM" />
+          <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" />
+          <EntitySet Name="TBLHOBI" EntityType="Self.TBLHOBI" />
+          <EntitySet Name="TBLKURS" EntityType="Self.TBLKURS" />
+          <EntitySet Name="TBLYETENEK" EntityType="Self.TBLYETENEK" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBMVCCVModelStoreContainer" CdmEntityContainer="DBMVCCVEntities">
+          <EntitySetMapping Name="TBLDENEYIM">
+            <EntityTypeMapping TypeName="DBMVCCVModel.TBLDENEYIM">
+              <MappingFragment StoreEntitySet="TBLDENEYIM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BASLIK" ColumnName="BASLIK" />
+                <ScalarProperty Name="ALTBASLIK" ColumnName="ALTBASLIK" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLEGITIM">
+            <EntityTypeMapping TypeName="DBMVCCVModel.TBLEGITIM">
+              <MappingFragment StoreEntitySet="TBLEGITIM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UNIVERSITE" ColumnName="UNIVERSITE" />
+                <ScalarProperty Name="FAKULTE" ColumnName="FAKULTE" />
+                <ScalarProperty Name="BOLUM" ColumnName="BOLUM" />
+                <ScalarProperty Name="NOTORTALAMA" ColumnName="NOTORTALAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLHAKKIMDA">
+            <EntityTypeMapping TypeName="DBMVCCVModel.TBLHAKKIMDA">
+              <MappingFragment StoreEntitySet="TBLHAKKIMDA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="DETAY" ColumnName="DETAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLHOBI">
+            <EntityTypeMapping TypeName="DBMVCCVModel.TBLHOBI">
+              <MappingFragment StoreEntitySet="TBLHOBI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HOBILER" ColumnName="HOBILER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLKURS">
+            <EntityTypeMapping TypeName="DBMVCCVModel.TBLKURS">
+              <MappingFragment StoreEntitySet="TBLKURS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KURSLAR" ColumnName="KURSLAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLYETENEK">
+            <EntityTypeMapping TypeName="DBMVCCVModel.TBLYETENEK">
+              <MappingFragment StoreEntitySet="TBLYETENEK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="YETENEKLER" ColumnName="YETENEKLER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
